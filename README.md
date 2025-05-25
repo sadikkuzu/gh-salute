@@ -23,6 +23,7 @@ Example output:
 aloha world, this is the gh-salute extension!
 running as yourusername
 profile: https://github.com/yourusername
+#followers: 12345
 ```
 
 ## Requirements

@@ -25,7 +25,7 @@ func main() {
 	}
 	fmt.Printf("running as %s\n", response.Login)
 	fmt.Printf("profile: %s\n", response.HtmlURL)
-	fmt.Printf("followers: %d\n", response.Followers)
+	fmt.Printf("#followers: %d\n", response.Followers)
 }
 
 // For more examples of using go-gh, see:
