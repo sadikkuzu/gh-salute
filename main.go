@@ -14,8 +14,9 @@ func main() {
 		return
 	}
 	response := struct {
-		Login   string
-		HtmlURL string `json:"html_url"`
+		Login     string
+		HtmlURL   string `json:"html_url"`
+		Followers int
 	}{}
 	err = client.Get("user", &response)
 	if err != nil {
@@ -24,6 +25,7 @@ func main() {
 	}
 	fmt.Printf("running as %s\n", response.Login)
 	fmt.Printf("profile: %s\n", response.HtmlURL)
+	fmt.Printf("followers: %d\n", response.Followers)
 }
 
 // For more examples of using go-gh, see:
