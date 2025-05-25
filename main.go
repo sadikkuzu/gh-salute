@@ -7,19 +7,23 @@ import (
 )
 
 func main() {
-	fmt.Println("hi world, this is the gh-salute extension!")
+	fmt.Println("aloha world, this is the gh-salute extension!")
 	client, err := api.DefaultRESTClient()
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	response := struct {Login string}{}
+	response := struct {
+		Login   string
+		HtmlURL string `json:"html_url"`
+	}{}
 	err = client.Get("user", &response)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 	fmt.Printf("running as %s\n", response.Login)
+	fmt.Printf("profile: %s\n", response.HtmlURL)
 }
 
 // For more examples of using go-gh, see:
